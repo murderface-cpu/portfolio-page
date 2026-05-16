@@ -11,7 +11,18 @@ export const Route = createFileRoute("/about")({
   component: About,
 });
 
-const stack = ["TypeScript", "React", "Next.js", "TanStack", "Node.js", "Postgres", "Tailwind", "AWS", "Stripe", "Docker"];
+const stack = [
+  "TypeScript",
+  "React",
+  "Next.js",
+  "TanStack",
+  "Node.js",
+  "Postgres",
+  "Tailwind",
+  "AWS",
+  "Stripe",
+  "Docker",
+];
 
 function About() {
   return (
@@ -19,23 +30,39 @@ function About() {
       <div className="mx-auto max-w-5xl grid md:grid-cols-[1fr_2fr] gap-12 items-start">
         <div>
           <div className="card-surface p-3">
-            <img src={bruceImg} alt="Bruce Kiptoo" width={512} height={512} loading="lazy" className="rounded-xl w-full" />
+            <img
+              src={bruceImg}
+              alt="Bruce Kiptoo"
+              width={512}
+              height={512}
+              loading="lazy"
+              className="rounded-xl w-full"
+            />
           </div>
         </div>
         <div>
           <p className="text-primary text-sm font-semibold tracking-widest">ABOUT</p>
           <h1 className="text-4xl md:text-5xl font-bold mt-3">Hi, I'm Bruce Kiptoo.</h1>
           <p className="mt-6 text-muted-foreground">
-            I'm a developer based in Nairobi, Kenya, focused on building fast, reliable, and beautiful web products. Over the last few years I've helped startups, agencies, and product teams ship software that customers love and engineering teams enjoy maintaining.
+            I'm a developer based in Nairobi, Kenya, focused on building fast, reliable, and
+            beautiful web products. Over the last few years I've helped startups, agencies, and
+            product teams ship software that customers love and engineering teams enjoy maintaining.
           </p>
           <p className="mt-4 text-muted-foreground">
-            I care about clean architecture, thoughtful UX, and measurable outcomes. Whether you need a new product launched from scratch or an existing codebase brought back to life, I bring a calm, senior-level approach to the work.
+            I care about clean architecture, thoughtful UX, and measurable outcomes. Whether you
+            need a new product launched from scratch or an existing codebase brought back to life, I
+            bring a calm, senior-level approach to the work.
           </p>
 
           <h2 className="font-semibold text-xl mt-10">Tech I work with</h2>
           <div className="mt-4 flex flex-wrap gap-2">
             {stack.map((t) => (
-              <span key={t} className="px-3 py-1.5 rounded-full text-sm border border-border bg-surface hover:border-primary hover:text-primary transition-colors">{t}</span>
+              <span
+                key={t}
+                className="px-3 py-1.5 rounded-full text-sm border border-border bg-surface hover:border-primary hover:text-primary transition-colors"
+              >
+                {t}
+              </span>
             ))}
           </div>
 

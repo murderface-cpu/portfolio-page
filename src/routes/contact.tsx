@@ -13,10 +13,22 @@ export const Route = createFileRoute("/contact")({
 });
 
 const faqs = [
-  { q: "How long does a typical project take?", a: "Most engagements run 4–12 weeks depending on scope. I'll give you a clear timeline after our first call." },
-  { q: "Do you work solo or with a team?", a: "Both. I deliver as a senior IC, and can bring in trusted designers and engineers when the scope calls for it." },
-  { q: "What stack do you prefer?", a: "TypeScript end-to-end — React/Next/TanStack on the frontend, Node and Postgres on the backend." },
-  { q: "Do you offer ongoing support?", a: "Yes. After launch I offer monthly retainer arrangements for maintenance, performance, and new features." },
+  {
+    q: "How long does a typical project take?",
+    a: "Most engagements run 4–12 weeks depending on scope. I'll give you a clear timeline after our first call.",
+  },
+  {
+    q: "Do you work solo or with a team?",
+    a: "Both. I deliver as a senior IC, and can bring in trusted designers and engineers when the scope calls for it.",
+  },
+  {
+    q: "What stack do you prefer?",
+    a: "TypeScript end-to-end — React/Next/TanStack on the frontend, Node and Postgres on the backend.",
+  },
+  {
+    q: "Do you offer ongoing support?",
+    a: "Yes. After launch I offer monthly retainer arrangements for maintenance, performance, and new features.",
+  },
 ];
 
 function Contact() {
@@ -27,14 +39,19 @@ function Contact() {
         <div>
           <p className="text-primary text-sm font-semibold tracking-widest">CONTACT</p>
           <h1 className="text-4xl md:text-5xl font-bold mt-3">Let's build something great.</h1>
-          <p className="mt-4 text-muted-foreground">Tell me about your project — timelines, goals, and where you're stuck. I'll get back within one business day.</p>
+          <p className="mt-4 text-muted-foreground">
+            Tell me about your project — timelines, goals, and where you're stuck. I'll get back
+            within one business day.
+          </p>
 
           <div className="mt-8 space-y-4">
             <div className="flex items-center gap-3 text-muted-foreground">
-              <Mail className="w-5 h-5 text-primary" /><span>hello@brucekiptoo.dev</span>
+              <Mail className="w-5 h-5 text-primary" />
+              <span>hello@brucekiptoo.dev</span>
             </div>
             <div className="flex items-center gap-3 text-muted-foreground">
-              <MapPin className="w-5 h-5 text-primary" /><span>Nairobi, Kenya · Available worldwide</span>
+              <MapPin className="w-5 h-5 text-primary" />
+              <span>Nairobi, Kenya · Available worldwide</span>
             </div>
           </div>
 
@@ -53,18 +70,38 @@ function Contact() {
         </div>
 
         <form
-          onSubmit={(e) => { e.preventDefault(); setSent(true); }}
+          onSubmit={(e) => {
+            e.preventDefault();
+            setSent(true);
+          }}
           className="card-surface p-8 h-fit space-y-4 sticky top-24"
         >
-          <Field label="Your name"><input required className="w-full bg-background border border-border rounded-lg px-4 py-3 outline-none focus:border-primary" /></Field>
-          <Field label="Email"><input required type="email" className="w-full bg-background border border-border rounded-lg px-4 py-3 outline-none focus:border-primary" /></Field>
+          <Field label="Your name">
+            <input
+              required
+              className="w-full bg-background border border-border rounded-lg px-4 py-3 outline-none focus:border-primary"
+            />
+          </Field>
+          <Field label="Email">
+            <input
+              required
+              type="email"
+              className="w-full bg-background border border-border rounded-lg px-4 py-3 outline-none focus:border-primary"
+            />
+          </Field>
           <Field label="What can I help with?">
-            <textarea required rows={5} className="w-full bg-background border border-border rounded-lg px-4 py-3 outline-none focus:border-primary resize-none" />
+            <textarea
+              required
+              rows={5}
+              className="w-full bg-background border border-border rounded-lg px-4 py-3 outline-none focus:border-primary resize-none"
+            />
           </Field>
           <button type="submit" className="btn-primary w-full !rounded-lg">
             <Send className="w-4 h-4 mr-2" /> Send Message
           </button>
-          {sent && <p className="text-sm text-primary text-center">Thanks! I'll be in touch shortly.</p>}
+          {sent && (
+            <p className="text-sm text-primary text-center">Thanks! I'll be in touch shortly.</p>
+          )}
         </form>
       </div>
     </div>
