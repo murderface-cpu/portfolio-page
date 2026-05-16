@@ -73,10 +73,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Bruce Kiptoo — Developer Portfolio" },
-      { name: "description", content: "Bruce Kiptoo — Developer crafting fast, reliable, and beautiful web products." },
+      {
+        name: "description",
+        content: "Bruce Kiptoo — Developer crafting fast, reliable, and beautiful web products.",
+      },
       { name: "author", content: "Bruce Kiptoo" },
       { property: "og:title", content: "Bruce Kiptoo — Developer Portfolio" },
-      { property: "og:description", content: "Developer crafting fast, reliable, and beautiful web products." },
+      {
+        property: "og:description",
+        content: "Developer crafting fast, reliable, and beautiful web products.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
@@ -118,7 +124,9 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       <div className="min-h-screen flex flex-col bg-background">
         <SiteHeader />
-        <main className="flex-1"><Outlet /></main>
+        <main className="flex-1">
+          <Outlet />
+        </main>
         <SiteFooter />
       </div>
     </QueryClientProvider>
