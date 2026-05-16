@@ -17,7 +17,9 @@ export function SiteHeader() {
           <span className="grid place-items-center w-9 h-9 rounded-lg bg-gradient-to-br from-primary to-glow">
             <Zap className="w-5 h-5 text-primary-foreground" />
           </span>
-          <span>Bruce<span className="text-primary">.</span></span>
+          <span>
+            Bruce<span className="text-primary">.</span>
+          </span>
         </Link>
         <nav className="hidden md:flex items-center gap-1">
           {nav.map((n) => (
