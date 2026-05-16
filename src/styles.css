@@ -77,7 +77,7 @@
   box-shadow: 0 10px 40px -10px color-mix(in oklab, var(--primary) 60%, transparent);
   transition: transform .2s ease, box-shadow .2s ease;
 }
-@utility btn-primary-hover { }
+
 .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 50px -10px color-mix(in oklab, var(--primary) 70%, transparent); }
 
 @utility card-surface {
