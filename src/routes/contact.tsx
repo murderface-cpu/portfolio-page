@@ -31,10 +31,10 @@ function Contact() {
 
           <div className="mt-8 space-y-4">
             <div className="flex items-center gap-3 text-muted-foreground">
-              <Mail className="w-5 h-5 text-primary" /> hello@brucekiptoo.dev
+              <Mail className="w-5 h-5 text-primary" /><span>hello@brucekiptoo.dev</span>
             </div>
             <div className="flex items-center gap-3 text-muted-foreground">
-              <MapPin className="w-5 h-5 text-primary" /> Nairobi, Kenya · Available worldwide
+              <MapPin className="w-5 h-5 text-primary" /><span>Nairobi, Kenya · Available worldwide</span>
             </div>
           </div>
 
