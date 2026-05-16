@@ -10,6 +10,10 @@ import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 // @cloudflare/vite-plugin builds from this — wrangler.jsonc main alone is insufficient.
 export default defineConfig({
   vite: {
+    define: {
+      "process.env.TSS_ROUTER_BASEPATH": JSON.stringify(process.env.TSS_ROUTER_BASEPATH ?? ""),
+      "process.env.TSS_SERVER_FN_BASE": JSON.stringify(process.env.TSS_SERVER_FN_BASE ?? ""),
+    },
     server: {
       allowedHosts: ["portfolio-page-gdhn.onrender.com"],
     },
