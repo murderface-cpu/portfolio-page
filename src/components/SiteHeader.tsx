@@ -18,7 +18,7 @@ export function SiteHeader() {
             <Zap className="w-5 h-5 text-primary-foreground" />
           </span>
           <span>
-            Bruce<span className="text-primary">.</span>
+            My Portfolio
           </span>
         </Link>
         <nav className="hidden md:flex items-center gap-1">

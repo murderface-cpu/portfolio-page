@@ -15,7 +15,7 @@ export default defineConfig({
       "process.env.TSS_SERVER_FN_BASE": JSON.stringify(process.env.TSS_SERVER_FN_BASE ?? ""),
     },
     server: {
-      allowedHosts: ["portfolio-page-gdhn.onrender.com"],
+      allowedHosts: ["portfolio-page-gdhn.onrender.com", "mindpulse.eu.cc"],
     },
   },
   tanstackStart: {

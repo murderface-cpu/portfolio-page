@@ -1,15 +1,14 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Code2, Rocket, Database, Quote } from "lucide-react";
 import heroImg from "@/assets/hero-laptop.jpg";
-import bruceImg from "@/assets/bruce.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Bruce Kiptoo — Developer Portfolio" },
+      { title: "Bruce Kiptoo - Developer Portfolio" },
       {
         name: "description",
-        content: "Developer crafting fast, reliable, and beautiful web products.",
+        content: "Developer crafting fast, reliable, and beautiful web and software products.",
       },
     ],
   }),
@@ -31,8 +30,8 @@ function Home() {
               </span>
             </h1>
             <p className="mt-6 text-lg text-muted-foreground max-w-lg">
-              I'm Bruce Kiptoo — a developer who helps founders and teams turn ideas into fast,
-              reliable, production-grade web applications.
+              I'm Bruce Kiptoo - a developer who helps founders and teams turn ideas into fast,
+              reliable, production-grade web and software applications.
             </p>
             <div className="mt-8 flex flex-col items-start gap-3">
               <Link to="/contact" className="btn-primary">
@@ -64,7 +63,7 @@ function Home() {
             {
               Icon: Code2,
               title: "Modern Full-Stack",
-              desc: "React, TypeScript, Node, Postgres — production-ready patterns end to end.",
+              desc: "Python, Java,React, TypeScript, Node, Postgres - production-ready patterns end to end.",
             },
             {
               Icon: Rocket,
@@ -104,6 +103,10 @@ function Home() {
               desc: "Type-safe Node and Postgres backends with auth, payments, and clean REST or tRPC interfaces.",
             },
             {
+              title: "Software Architecture",
+              desc: "Design and implement scalable, maintainable software architectures that align with business goals.",
+            },
+            {
               title: "Performance Audits",
               desc: "Profile, refactor, and ship measurable speed-ups for slow or aging codebases.",
             },
@@ -121,7 +124,7 @@ function Home() {
       </Section>
 
       {/* Stats */}
-      <Section
+      {/* <Section
         title="Numbers That Reflect The Work"
         subtitle="Every project is delivered with focus on measurable, long-term impact."
       >
@@ -140,10 +143,10 @@ function Home() {
             </div>
           ))}
         </div>
-      </Section>
+      </Section> */}
 
       {/* Testimonials */}
-      <Section title="What Clients Say" subtitle="Real teams. Real products. Real outcomes.">
+      {/* <Section title="What Clients Say" subtitle="Real teams. Real products. Real outcomes.">
         <div className="grid md:grid-cols-3 gap-6">
           {[
             {
@@ -182,7 +185,7 @@ function Home() {
             </div>
           ))}
         </div>
-      </Section>
+      </Section> */}
 
       {/* CTA */}
       <section className="px-6 py-20">

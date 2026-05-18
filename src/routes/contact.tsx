@@ -1,16 +1,31 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Mail, MapPin, Send } from "lucide-react";
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Bruce Kiptoo" },
+      { title: "Contact - Bruce Kiptoo" },
       { name: "description", content: "Get in touch with Bruce Kiptoo." },
     ],
   }),
   component: Contact,
 });
+
+const sendEmail = async (name: string, email: string, message: string) => {
+  await emailjs.send(
+    "service_bpri2mb",
+    "template_hcjv7ih",
+    {
+      from_name: name,
+      from_email: email,
+      message: message,
+      to_email: "brucekiptoo@aiyoutubeclipper.eu.cc",
+    },
+    "w5z6hhdh9QilAKFEZ"
+  );
+};
 
 const faqs = [
   {
@@ -23,7 +38,7 @@ const faqs = [
   },
   {
     q: "What stack do you prefer?",
-    a: "TypeScript end-to-end — React/Next/TanStack on the frontend, Node and Postgres on the backend.",
+    a: "TypeScript end-to-end - React/Next/TanStack on the frontend, Node and Postgres on the backend.",
   },
   {
     q: "Do you offer ongoing support?",
@@ -32,7 +47,27 @@ const faqs = [
 ];
 
 function Contact() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setSending(true);
+    setError("");
+    try {
+      await sendEmail(name, email, message);
+      setSent(true);
+    } catch (err) {
+      setError("Something went wrong. Please try again.");
+    } finally {
+      setSending(false);
+    }
+  };
+
   return (
     <div className="px-6 py-20">
       <div className="mx-auto max-w-6xl grid md:grid-cols-2 gap-12">
@@ -40,14 +75,14 @@ function Contact() {
           <p className="text-primary text-sm font-semibold tracking-widest">CONTACT</p>
           <h1 className="text-4xl md:text-5xl font-bold mt-3">Let's build something great.</h1>
           <p className="mt-4 text-muted-foreground">
-            Tell me about your project — timelines, goals, and where you're stuck. I'll get back
+            Tell me about your project - timelines, goals, and where you're stuck. I'll get back
             within one business day.
           </p>
 
           <div className="mt-8 space-y-4">
             <div className="flex items-center gap-3 text-muted-foreground">
               <Mail className="w-5 h-5 text-primary" />
-              <span>hello@brucekiptoo.dev</span>
+              <span>william@murderface.eu.cc</span>
             </div>
             <div className="flex items-center gap-3 text-muted-foreground">
               <MapPin className="w-5 h-5 text-primary" />
@@ -69,16 +104,12 @@ function Contact() {
           </div>
         </div>
 
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            setSent(true);
-          }}
-          className="card-surface p-8 h-fit space-y-4 sticky top-24"
-        >
+        <form onSubmit={handleSubmit} className="card-surface p-8 h-fit space-y-4 sticky top-24">
           <Field label="Your name">
             <input
               required
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               className="w-full bg-background border border-border rounded-lg px-4 py-3 outline-none focus:border-primary"
             />
           </Field>
@@ -86,6 +117,8 @@ function Contact() {
             <input
               required
               type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="w-full bg-background border border-border rounded-lg px-4 py-3 outline-none focus:border-primary"
             />
           </Field>
@@ -93,15 +126,19 @@ function Contact() {
             <textarea
               required
               rows={5}
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
               className="w-full bg-background border border-border rounded-lg px-4 py-3 outline-none focus:border-primary resize-none"
             />
           </Field>
-          <button type="submit" className="btn-primary w-full !rounded-lg">
-            <Send className="w-4 h-4 mr-2" /> Send Message
+          <button type="submit" disabled={sending} className="btn-primary w-full !rounded-lg">
+            <Send className="w-4 h-4 mr-2" />
+            {sending ? "Sending..." : "Send Message"}
           </button>
           {sent && (
             <p className="text-sm text-primary text-center">Thanks! I'll be in touch shortly.</p>
           )}
+          {error && <p className="text-sm text-red-500 text-center">{error}</p>}
         </form>
       </div>
     </div>

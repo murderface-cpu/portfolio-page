@@ -4,7 +4,7 @@ import bruceImg from "@/assets/bruce.jpg";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Bruce Kiptoo" },
+      { title: "About - Bruce Kiptoo" },
       { name: "description", content: "About Bruce Kiptoo, developer based in Nairobi, Kenya." },
     ],
   }),
@@ -12,16 +12,65 @@ export const Route = createFileRoute("/about")({
 });
 
 const stack = [
+  // Frontend Frameworks & Libraries
   "TypeScript",
   "React",
   "Next.js",
-  "TanStack",
+  "React Three Fiber",
+  "TanStack Query",
+  "Zustand",
+  
+  // Backend & Runtime
   "Node.js",
-  "Postgres",
-  "Tailwind",
-  "AWS",
-  "Stripe",
+  "Express",
+  "Django",
+  "Python",
+  
+  // Databases
+  "PostgreSQL",
+  "MongoDB",
+  "Redis",
+  "IndexedDB",
+  
+  // Styling & UI
+  "Tailwind CSS",
+  "CSS Modules",
+  "Zod (validation)",
+  
+  // DevOps & Infrastructure
   "Docker",
+  "Kubernetes",
+  "AWS (EC2, S3, Lambda)",
+  "GitHub Actions",
+  
+  // Payments & Integration
+  "Stripe",
+  
+  // Monorepo & Build Tools
+  "Turborepo",
+  "Vite",
+  "Next.js",
+  "Bun",
+  "npm/pnpm",
+  
+  // 3D & Graphics
+  "Three.js",
+  "WebGPU",
+  "Drei",
+  
+  // State Management & Persistence
+  "Zustand",
+  "Zundo (undo/redo)",
+  "Prisma ORM",
+  
+  // Testing & Quality
+  "Jest",
+  "Vitest",
+  
+  // AI & ML
+  "Python (ML pipeline)",
+  "TensorFlow",
+  "LLM Integration",
 ];
 
 function About() {
