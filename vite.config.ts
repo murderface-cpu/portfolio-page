@@ -11,7 +11,7 @@ import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 export default defineConfig({
   vite: {
     server: {
-      allowedHosts: ["portfolio-page-gdhn.onrender.com", "mindpulse.eu.cc"],
+      allowedHosts: ["portfolio-page-gdhn.onrender.com", "murderface.eu.cc"],
     },
   },
   tanstackStart: {
