@@ -13,6 +13,10 @@ export default defineConfig({
     server: {
       allowedHosts: ["portfolio-page-gdhn.onrender.com", "murderface.eu.cc"],
     },
+    define: {
+      "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV ?? "production"),
+      "process.env.TSS_ROUTER_BASEPATH": JSON.stringify(process.env.TSS_ROUTER_BASEPATH ?? "/"),
+    },
   },
   tanstackStart: {
     server: { entry: "server" },
