@@ -17,10 +17,6 @@ export default defineConfig({
       "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV ?? "production"),
       "process.env.TSS_ROUTER_BASEPATH": JSON.stringify(process.env.TSS_ROUTER_BASEPATH ?? "/"),
       "process.env.TSS_INLINE_CSS_ENABLED": JSON.stringify("false"),
-      "process.env": "({})",
-      "process.platform": JSON.stringify("browser"),
-      "process.version": JSON.stringify(""),
-      process: "({ env: {}, platform: 'browser', version: '' })",
     },
   },
   tanstackStart: {
