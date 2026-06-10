@@ -28,7 +28,7 @@ export default defineConfig({
     server: { entry: "server" },
 
     router: {
-      basepath: "/myapp",
+      basepath: "/",
     },
   },
 })
